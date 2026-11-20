@@ -1,0 +1,52 @@
+column_id,table_name,column_name,data_type,is_key,description
+1,stg_pos_sales,sale_id,INTEGER,1,Till receipt line id — source key
+2,stg_pos_sales,sale_date,TEXT,0,Sale date (YYYY-MM-DD)
+3,stg_pos_sales,customer_id,INTEGER,0,Customer id from the till
+4,stg_pos_sales,product_sku,TEXT,0,Product SKU as typed at the till
+5,stg_pos_sales,quantity,INTEGER,0,Units sold on the line
+6,stg_pos_sales,unit_price,INTEGER,0,Price charged per unit (PKR)
+7,stg_web_orders,order_id,INTEGER,1,Website order line id — source key
+8,stg_web_orders,order_date,TEXT,0,Order date (YYYY-MM-DD)
+9,stg_web_orders,customer_email,TEXT,0,Customer email from the website
+10,stg_web_orders,product_sku,TEXT,0,Product SKU from the website
+11,stg_web_orders,quantity,INTEGER,0,Units ordered on the line
+12,stg_web_orders,unit_price,INTEGER,0,Price charged per unit (PKR)
+13,stg_supplier_prices,supplier_sku,TEXT,1,Supplier SKU — source key
+14,stg_supplier_prices,category,TEXT,0,Product category from the supplier sheet
+15,stg_supplier_prices,cost_price,INTEGER,0,Cost price per unit (PKR)
+16,stg_manual_adjustments,adjustment_id,INTEGER,1,Manual adjustment id — source key
+17,stg_manual_adjustments,sale_id,INTEGER,0,Sale id the adjustment corrects
+18,stg_manual_adjustments,adjustment_date,TEXT,0,Date the adjustment was entered
+19,stg_manual_adjustments,adjusted_amount,INTEGER,0,Correction amount (PKR)
+20,stg_customers,customer_id,INTEGER,1,Customer id — source key
+21,stg_customers,customer_name,TEXT,0,Customer name as registered at the till
+22,stg_customers,city,TEXT,0,Customer home city
+23,dim_customer,customer_key,INTEGER,1,Surrogate key — one per customer
+24,dim_customer,customer_id,INTEGER,0,Source customer id from the till
+25,dim_customer,customer_name,TEXT,0,Customer name
+26,dim_customer,city,TEXT,0,Customer home city
+27,dim_product,product_key,INTEGER,1,Surrogate key — one per SKU
+28,dim_product,product_sku,TEXT,0,Product SKU
+29,dim_product,product_name,TEXT,0,Product display name — PLANTED GAP: no source column feeds it
+30,dim_product,category,TEXT,0,Product category
+31,dim_product,supplier_cost,INTEGER,0,Cost price per unit (PKR)
+32,dim_date,date_key,INTEGER,1,Date as YYYYMMDD integer
+33,dim_date,full_date,TEXT,0,Calendar date (YYYY-MM-DD)
+34,dim_date,month,INTEGER,0,Month number (1-12)
+35,dim_date,year,INTEGER,0,Calendar year
+36,fact_sales,sale_key,INTEGER,1,Surrogate key — one per sale line
+37,fact_sales,date_key,INTEGER,0,Date of the sale (links to dim_date)
+38,fact_sales,customer_key,INTEGER,0,Customer of the sale (links to dim_customer)
+39,fact_sales,product_key,INTEGER,0,Product sold (links to dim_product)
+40,fact_sales,quantity,INTEGER,0,Units sold on the line
+41,fact_sales,unit_price,INTEGER,0,Price charged per unit (PKR)
+42,fact_sales,net_revenue,INTEGER,0,Line revenue = quantity x unit_price (PKR)
+43,fact_returns,return_id,INTEGER,1,Return id — one per return
+44,fact_returns,sale_id,INTEGER,0,Sale id the return refers to
+45,fact_returns,return_date,TEXT,0,Date the return was recorded
+46,fact_returns,refund_amount,INTEGER,0,Amount refunded (PKR)
+47,agg_monthly_sales,month_key,INTEGER,1,Month as YYYYMM integer
+48,agg_monthly_sales,product_key,INTEGER,0,Product (links to dim_product)
+49,agg_monthly_sales,total_quantity,INTEGER,0,Units sold in the month
+50,agg_monthly_sales,total_revenue,INTEGER,0,Revenue in the month (PKR)
+51,agg_monthly_sales,avg_unit_price,REAL,0,Average unit price in the month (PKR)

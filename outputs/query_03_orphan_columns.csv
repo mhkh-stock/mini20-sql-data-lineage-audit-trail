@@ -1,0 +1,2 @@
+table_name,column_name,data_type,description
+dim_product,product_name,TEXT,Product display name — PLANTED GAP: no source column feeds it

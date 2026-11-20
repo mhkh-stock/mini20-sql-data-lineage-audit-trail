@@ -1,0 +1,34 @@
+target_table,target_column,source_table,source_column,transform_type,transform_rule
+agg_monthly_sales,avg_unit_price,fact_sales,unit_price,calculated,AVG(unit_price) grouped by month and product
+agg_monthly_sales,month_key,fact_sales,date_key,calculated,YYYYMM taken from date_key (date_key / 100)
+agg_monthly_sales,total_quantity,fact_sales,quantity,calculated,SUM(quantity) grouped by month and product
+agg_monthly_sales,total_revenue,fact_sales,net_revenue,calculated,SUM(net_revenue) grouped by month and product
+dim_customer,customer_key,stg_customers,customer_id,calculated,Surrogate key generated from customer_id
+dim_date,date_key,stg_pos_sales,sale_date,calculated,YYYYMMDD integer built from sale_date
+dim_date,month,stg_pos_sales,sale_date,calculated,Month number taken from sale_date
+dim_date,year,stg_pos_sales,sale_date,calculated,Year taken from sale_date
+dim_product,product_key,stg_pos_sales,product_sku,calculated,Surrogate key generated from product_sku
+fact_sales,net_revenue,stg_pos_sales,quantity,calculated,quantity x unit_price summed over POS and website
+fact_sales,net_revenue,stg_pos_sales,unit_price,calculated,quantity x unit_price summed over POS and website
+fact_sales,net_revenue,stg_web_orders,quantity,calculated,quantity x unit_price summed over POS and website
+fact_sales,net_revenue,stg_web_orders,unit_price,calculated,quantity x unit_price summed over POS and website
+fact_sales,sale_key,stg_pos_sales,sale_id,calculated,Surrogate key generated from sale_id
+agg_monthly_sales,product_key,fact_sales,product_key,pass-through,Copied as-is
+dim_customer,city,stg_customers,city,pass-through,Copied as-is
+dim_customer,customer_id,stg_customers,customer_id,pass-through,Copied as-is
+dim_customer,customer_name,stg_customers,customer_name,pass-through,Copied as-is
+dim_date,full_date,stg_pos_sales,sale_date,pass-through,Copied as-is
+dim_product,category,stg_supplier_prices,category,pass-through,Copied as-is
+dim_product,product_sku,stg_pos_sales,product_sku,pass-through,Copied as-is
+dim_product,supplier_cost,stg_supplier_prices,cost_price,pass-through,Renamed cost_price to supplier_cost
+fact_returns,refund_amount,stg_manual_adjustments,adjusted_amount,pass-through,Renamed adjusted_amount to refund_amount
+fact_returns,return_date,stg_manual_adjustments,adjustment_date,pass-through,Renamed adjustment_date to return_date
+fact_returns,return_id,stg_manual_adjustments,adjustment_id,pass-through,Copied as-is
+fact_returns,sale_id,stg_manual_adjustments,sale_id,pass-through,Copied as-is
+fact_sales,customer_key,dim_customer,customer_key,pass-through,Copied as-is
+fact_sales,date_key,dim_date,date_key,pass-through,Copied as-is
+fact_sales,product_key,dim_product,product_key,pass-through,Copied as-is
+fact_sales,quantity,stg_pos_sales,quantity,pass-through,Copied as-is
+fact_sales,quantity,stg_web_orders,quantity,pass-through,Website orders unioned with till sales
+fact_sales,unit_price,stg_pos_sales,unit_price,pass-through,Copied as-is
+fact_sales,unit_price,stg_web_orders,unit_price,pass-through,Website orders unioned with till sales

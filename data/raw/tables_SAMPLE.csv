@@ -1,0 +1,12 @@
+table_id,table_name,layer,system_id,description
+1,stg_pos_sales,staging,POS,Raw till sales as landed — one row per till line
+2,stg_web_orders,staging,WEB,Raw website orders as landed — one row per order line
+3,stg_supplier_prices,staging,SUP,Raw supplier price list as landed
+4,stg_manual_adjustments,staging,XL,Hand-entered corrections as landed
+5,stg_customers,staging,POS,Customer master exported from the till system
+6,dim_customer,warehouse,,Customer dimension — one row per customer
+7,dim_product,warehouse,,Product dimension — one row per SKU
+8,dim_date,warehouse,,Calendar dimension built from sale dates
+9,fact_sales,warehouse,,One row per sale line — POS and website combined
+10,fact_returns,warehouse,,One row per return or refund
+11,agg_monthly_sales,warehouse,,Monthly sales totals by product

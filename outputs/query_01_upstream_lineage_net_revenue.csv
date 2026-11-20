@@ -1,0 +1,5 @@
+source_table,source_column,source_system,transform_type,transform_rule,depth
+stg_pos_sales,quantity,POS,calculated,quantity x unit_price summed over POS and website,1
+stg_pos_sales,unit_price,POS,calculated,quantity x unit_price summed over POS and website,1
+stg_web_orders,quantity,WEB,calculated,quantity x unit_price summed over POS and website,1
+stg_web_orders,unit_price,WEB,calculated,quantity x unit_price summed over POS and website,1

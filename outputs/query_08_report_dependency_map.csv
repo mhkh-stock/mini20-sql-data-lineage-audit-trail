@@ -1,0 +1,7 @@
+report_id,report_name,owner,refresh_cadence,tables_used,columns_used
+R3,Customer Retention Report,Fatima Noor,Weekly,"dim_customer, fact_sales",3
+R1,Daily Sales Dashboard,Ayesha Khan,Daily,"dim_date, dim_product, fact_sales",4
+R5,Executive KPI Summary,Ayesha Khan,Weekly,"agg_monthly_sales, dim_customer, fact_sales",4
+R2,Monthly Revenue Report,Bilal Ahmed,Monthly,"agg_monthly_sales, dim_product",3
+R4,Product Margin Report,Bilal Ahmed,Weekly,"dim_product, fact_sales",3
+R6,Supplier Cost Watch,Fatima Noor,Weekly,dim_product,3

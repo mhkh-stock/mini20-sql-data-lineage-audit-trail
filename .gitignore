@@ -1,0 +1,3 @@
+# The built database is rebuildable from the CSVs + scripts — never upload it.
+*.db
+__pycache__/

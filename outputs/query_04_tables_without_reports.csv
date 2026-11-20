@@ -1,0 +1,2 @@
+table_name,layer,description
+fact_returns,warehouse,One row per return or refund

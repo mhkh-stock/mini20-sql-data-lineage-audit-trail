@@ -1,0 +1,2 @@
+# Standard library only (sqlite3, csv) — no third-party packages.
+# Nothing to install: python3 src/build_db.py just works.

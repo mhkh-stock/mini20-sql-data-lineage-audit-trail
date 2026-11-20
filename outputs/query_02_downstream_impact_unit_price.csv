@@ -1,0 +1,5 @@
+target_table,target_column,transform_type,depth,reports_using_it
+fact_sales,net_revenue,calculated,1,Customer Retention Report; Daily Sales Dashboard; Executive KPI Summary; Product Margin Report
+fact_sales,unit_price,pass-through,1,Product Margin Report
+agg_monthly_sales,avg_unit_price,calculated,2,
+agg_monthly_sales,total_revenue,calculated,2,Executive KPI Summary; Monthly Revenue Report

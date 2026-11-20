@@ -1,0 +1,5 @@
+run_id,table_name,run_date,rows_loaded,rows_rejected,status,finding,notes
+LR-06,fact_sales,2026-11-10,0,0,failed,FAILED RUN,Source file missing — POS export did not arrive
+LR-08,fact_sales,2026-11-12,1180,37,success,LYING SUCCESS ROW,37 rows rejected but run marked success — see findings
+LR-22,dim_product,2026-11-15,0,18,failed,FAILED RUN,Supplier sheet had 18 rows with a negative cost_price
+LR-28,agg_monthly_sales,2026-11-17,6,2,partial,PARTIAL RUN,2 product keys missing from dim_product — totals exclude them

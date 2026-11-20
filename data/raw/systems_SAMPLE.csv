@@ -1,0 +1,5 @@
+system_id,system_name,system_type,owner,notes
+POS,Point-of-sale tills,Source system,Ayesha Khan,Till sales from the two Noor Electronics branches
+WEB,Website orders,Source system,Bilal Ahmed,Online store orders from noor-electronics.pk
+SUP,Supplier price sheet,Source system,Fatima Noor,Weekly supplier price list shared as Excel
+XL,Manual Excel adjustments,Source system,Ayesha Khan,Hand-entered price corrections and returns

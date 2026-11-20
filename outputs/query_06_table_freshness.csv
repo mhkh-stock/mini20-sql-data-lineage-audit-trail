@@ -1,0 +1,3 @@
+table_name,last_good_load,days_since_load
+dim_date,2026-11-02,16
+fact_returns,2026-11-08,10

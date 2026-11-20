@@ -1,0 +1,7 @@
+table_name,columns_total,columns_with_source,completeness_pct
+dim_product,5,4,80.0
+agg_monthly_sales,5,5,100.0
+dim_customer,4,4,100.0
+dim_date,4,4,100.0
+fact_returns,4,4,100.0
+fact_sales,7,7,100.0
