@@ -1,7 +1,7 @@
 # Mini #20 — SQL Data Lineage & Audit Trail Pack
 
-**Status:** built and verified locally — publish pending
-(https://github.com/mhkh-stock/mini20-sql-data-lineage-audit-trail).
+**Status:** live on GitHub
+(https://github.com/mhkh-stock/mini20-sql-data-lineage-audit-trail) — published Fri 20 Nov 2026.
 
 **SAMPLE / DEMO data only.** Fictional shop, fictional systems,
 fictional numbers. Never claimed as real client work.
@@ -173,7 +173,7 @@ install). Verified on SQLite 3.45.1.
 
 ## Published
 
-Publish pending: https://github.com/mhkh-stock/mini20-sql-data-lineage-audit-trail
+Published Fri 20 Nov 2026: https://github.com/mhkh-stock/mini20-sql-data-lineage-audit-trail
 
 The built `data/processed/lineage.db` is intentionally not uploaded —
 rebuild it any time with `python3 src/build_db.py`.
